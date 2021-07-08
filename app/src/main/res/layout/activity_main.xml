@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout>
+
+    <data>
+        <variable
+            name="personData"
+            type="com.example.databindingdemo.Person" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/TextView"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/name"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TextView2"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/IC_No"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextView" />
+
+        <TextView
+            android:id="@+id/TextView3"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextView2" />
+
+        <TextView
+            android:id="@+id/TextView4"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address"
+            android:textSize="@dimen/text_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/TextView3" />
+
+        <TextView
+            android:id="@+id/tvName"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={personData.name}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/TextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvIC"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={personData.ic}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/TextView2"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={personData.email}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/TextView3"
+            app:layout_constraintTop_toBottomOf="@+id/tvIC" />
+
+        <TextView
+            android:id="@+id/tvAddress"
+            style="@style/layout_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@={personData.address}"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/TextView4"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
